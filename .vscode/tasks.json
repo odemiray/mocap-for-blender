@@ -1,0 +1,44 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [{
+            "type": "shell",
+            "label": "g++.exe build exe",
+            "command": "C:\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-L${fileDirname}\\Include",
+                "-L${fileDirname}\\Lib",
+                "-lCLEyeMulticam"
+            ],
+            "options": {
+                "cwd": "C:\\MinGW\\bin"
+            },
+            "problemMatcher": ["$gcc"]
+        },
+        {
+            "type": "shell",
+            "label": "g++.exe build so",
+            "command": "C:\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-m32",
+                "-g",
+                "${file}",
+                "-shared",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.so",
+                "-L${fileDirname}\\Include",
+                "-L${fileDirname}\\Lib",
+                "-lCLEyeMulticam"
+            ],
+            "options": {
+                "cwd": "C:\\MinGW\\bin"
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
